@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="maFonction.js"></script>
+    <script>
+      maFonction();
+    </script>
+  </head>
+  <!-- AU CHARGEMENT de la page = APRÈS le chargement du document-->
+  <body onload="maFonction()">
+    <h1>Mon nouveau document</h1>
+    <!-- Exécutez la fonction maFonction AU moment où l'utilisateur clique sur le premier paragraphe -->
+    <p onclick="maFonction();">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente
+      esse modi eos accusamus commodi officia provident dolorem sequi quasi
+      vitae veniam quidem animi nobis, nam quod sit ut cum. Lorem ipsum dolor
+      sit amet consectetur adipisicing elit. Illum repellendus ullam laborum
+      pariatur sapiente est quibusdam veritatis, sunt, modi incidunt perferendis
+      quaerat esse quam, ad id nesciunt ex maxime commodi.
+    </p>
+    <!-- Exécuter la fonction maFonction APRÈS que le navigateur ait chargé et affiché le premier paragraphe et AVANT qu'il ait chargé et affiché le second paragraphe. -->
+    <script>
+      maFonction();
+    </script>
+    <p>Deuxième paragraphe</p>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>

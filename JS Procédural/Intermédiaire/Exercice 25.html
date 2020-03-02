@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JavaScript : Exercice 25</title>
+    <script>
+      /*********************************
+             *************EXERCICE*************
+             **********************************
+             	Dans l'exercice précédent, deux blocs de code se ressemblent beaucoup. Ce sont les parties du programme qui permettent d'obliger l'utilisateur à saisir un nombre.
+             	On pourrait donc créer une fonction qui évite d'avoir à écrire à deux reprises des instructions quasi identiques.
+             	Écrivez cette fonction.
+
+             	Veillez aux trois points suivants pour l'écriture de cette fonction :
+             	_ La fonction ne peut pas ne se terminer tant que l'utilisateur n'a pas saisi de nombre.
+             	_ La fonction prend en argument le message qui s'affichera à l'utilisateur lors de la saisie.
+             	_ La fonction retourne le nombre saisi par l'utilisateur.
+             */
+      let f = () => {
+        var sum = 0;
+        let nb = [];
+        for (var i = 0; i < 3; i++) {
+          nb[i] = parseFloat(
+            prompt(`Saisissez, s'il vous plait, un nombre ${i + 1}`)
+          );
+          while (isNaN(nb[i]) == true || nb[i] == null) {
+            nb[i] = prompt(
+              `Ceci n'est pas un nombre ${i +
+                1}. Saisissez, s'il vous plait, un nombre`
+            );
+          }
+          sum = sum + parseFloat(nb[i]);
+        }
+        return alert("La somme de " + i + " éléments est égale à " + sum);
+      };
+    </script>
+  </head>
+  <body onload="f()">
+    <h1>Mon nouveau document</h1>
+    <p>Premier paragraphe</p>
+    <p>Deuxième paragraphe</p>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>

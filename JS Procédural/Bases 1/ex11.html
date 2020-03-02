@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var f1 = function(texte, num) {
+        var phrase = texte + num;
+        return phrase;
+      };
+      var retourPhrase = f1("l'heure actuelle est ", 11);
+      alert(retourPhrase);
+
+      var lettreDAmour = function(declaration) {
+        return `${declaration[0]}, ${declaration[1]}`;
+      };
+      var lettre = lettreDAmour(["Chéri", "je t'aime"]);
+      alert(lettre);
+    </script>
+  </head>
+  <body>
+    <h1>Mon nouveau document</h1>
+    <p>Premier paragraphe</p>
+    <p>Deuxième paragraphe</p>
+    <noscript>
+      <p>Veuillez activer JavaScript</p>
+    </noscript>
+  </body>
+</html>
