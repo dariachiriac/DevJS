@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>JavaScript & DOM : Les Objets - Exercice 3</title>
     <script>
       //Énoncé :
       /*
       1. Dans les exercices de JavaScript "procédural" vous avez créé plusieurs fonctions. Vous devez regrouper toutes ces fonctions (au moins 5 d’entre-elles) dans un objet en JSON. Déclarez un objet dans lequel chaque propriété contiendra une fonction parmi celles créées précédemment.
-      */
       
+      var melimelo = {
+        insertNumber: function() {
+          var m = prompt("Saisissez, s'il vous plait, un nombre");
+          var c = isNaN(parseFloat(m));
+          if (c == false) {
+            alert("Merci d'avoir saisi un nombre");
+          } else {
+            alert("Vous devez saisir un nombre");
+          }
+        },
+
+        insertTwoNumbers: function() {
+          var nb1 = prompt("Saisissez, s'il vous plait, un nombre");
+          while (isNaN(parseFloat(nb1)) == true) {
+            nb1 = prompt("Saisissez, s'il vous plait, un nombre");
+          }
+          var nb2 = prompt("Saisissez, s'il vous plait, un deuxième nombre");
+          while (isNaN(parseFloat(nb2)) == true) {
+            nb2 = prompt("Saisissez, s'il vous plait, un deuxième nombre");
+          }
+          return alert(parseFloat(nb1) + parseFloat(nb2));
+        },
+
+        addition: function(table) {
+          let sum = 0;
+          for (var i = 0; i < table.length; i++) {
+            sum = sum + table[i];
+          }
+          return `La somme est égale à ${sum}`;
+        },
+
+        multiplication: function(table) {
+          let mult = 1;
+          for (var i = 0; i < table.length; i++) {
+            mult = mult * table[i];
+          }
+          return `Le produit est égal à ${mult}`;
+        },
+
+        test: function() {
+          var p1 = null;
+          while (p1 == null || p1 == false) {
+            p1 = prompt("First part of the phrase");
+          }
+          var p2 = null;
+          while (p2 == null || p2 == false) {
+            p2 = prompt("Second part of the phrase");
+          }
+          alert(p1 + p2);
+        }
+      };
       /*
       2. Exécutez chacune des méthodes créés dans cet objet pour les tester.
-      */
-
+    
+      melimelo.insertNumber();
+      melimelo.insertTwoNumbers();
+      melimelo.addition([5, 6, 5]);
+      melimelo.multiplication([5, 6, 5]);
+      melimelo.test();
       /*
       3. Déclarez 1 objet JSON qui contient :
 
@@ -41,6 +95,42 @@
         - qui RETOURNE 1 objet de 5 propriétés.
       -> Exécutez cette méthode et AFFICHEZ la valeur de la 4ème propriété de la VALEUR DE RETOUR dans une boîte de dialogue.
       */
+      var melimelo2 = {
+        f1: function(a) {
+          console.log("Le nombre est " + a);
+          return console.log(a * 100);
+        },
+        f2: function(name) {
+          console.log("Votre nom est " + name);
+          return console.log("Hello, " + name + "!");
+        },
+        f3: function(table) {
+          console.log("le contenu à l'index 1 est " + table[1]);
+          table[1] = table[2];
+          console.log("le tableau est " + table);
+          console.log("le contenu à l'index 2 est " + table[2]);
+        },
+        f4: function(obj1) {
+          console.log(obj1);
+          let somme = 0;
+          for (var num in obj1) {
+            somme += obj1[num];
+            console.log(somme);
+          }
+          obj1.num4 = somme;
+          return console.log(obj1);
+        }
+      };
+      melimelo2.f1(5);
+      melimelo2.f2("Daria");
+      melimelo2.f3([5, 6, 8, 4]);
+      melimelo2.f4({
+        num1: 4,
+        num2: 8,
+        num3: 12,
+        num4: 16,
+        num5: 20
+      });
     </script>
   </head>
   <body>
