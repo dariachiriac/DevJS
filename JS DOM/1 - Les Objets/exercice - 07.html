@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>JavaScript & DOM : Les Objets - Exercice 7</title>
     <script>
       //Énoncé :
@@ -9,34 +9,37 @@
         1. La déclaration JSON qui suit ne doit à aucun moment être modifiée.
       */
       var monObjet = {
-        e:function(){
+        e: function() {
           alert(this.t);
         },
-        r:true,
-        t:'Ceci est un texte dans un objet'
+        r: true,
+        t: "Ceci est un texte dans un objet"
       };
 
       var monAutreObjet = {
-        e:[function(){
-          alert('Vous êtes ici !');
-        },true],
-        r:false,
-        t:function(){
+        e: [
+          function() {
+            alert("Vous êtes ici !");
+          },
+          true
+        ],
+        r: false,
+        t: function() {
           this.y = {
-            e:function(){
-              alert('Ou suis je ? Qui suis je ?');
+            e: function() {
+              alert("Ou suis je ? Qui suis je ?");
             }
           };
-          alert('Desormais ma propriété y contient un objet');
+          alert("Desormais ma propriété y contient un objet");
         }
       };
 
-      //VOUS NE DEVEZ PAS MODIFIER CETTE DECLARATION EN REPONDANT AUX QUESTIONS QUI SUIVENT.  
+      //VOUS NE DEVEZ PAS MODIFIER CETTE DECLARATION EN REPONDANT AUX QUESTIONS QUI SUIVENT.
 
       /*
         1. Affichez dans une boite de dialogue le contenu de la propriété r de l'objet référencé dans la variable monObjet.
       */
-console.log(monObjet.r);
+      console.log(monObjet.r);
       /*
         2. Affichez dans une boite de dialogue le contenu de la propriété r de l'objet référencé dans la variable monAutreObjet.
       */
@@ -44,20 +47,20 @@ console.log(monObjet.r);
       /*
         3. Déclenchez la méthode située en première position dans le tableau dans la propriété e de l'objet référencé dans la variable monAutreObjet (si vous réussissez le texte 'Vous êtes ici !' devrez s'afficher).
       */
-monAutreObjet.e[0]();
+      monAutreObjet.e[0]();
       /*
         4. Mettez l'objet référencé dans la variable monAutreObjet dans une propriété y de l'objet référencé dans la variable monObjet (Vous allez donc mettre un objet dans une - nouvelle - propriété d'un autre objet)
       */
-monObjet.y = monAutreObjet;
+      monObjet.y = monAutreObjet;
       /*
         5. Déclenchez la méthode situé dans la propriété t dans l'objet référencé dans la propriété y contenue dans l'objet référencé dans la variable monObjet. Si vous réussissez, le message 'Désormais ma propriété y contient un objet' devrait s'afficher.
       */
-monObjet.y.t();
+      monObjet.y.t();
 
       /*
         6. Déclenchez la méthode situé dans la propriété e de l'objet nouvellement référencé dans la propriété y lors de l'exécution de la précédente méthode. Si vous réussissez, vous devriez voir s'afficher successivement les textes  : 'Ou suis je ? Qui suis je ?'.
       */
-      monObjet.y.this.y(); 
+      monObjet.y.y.e();
     </script>
   </head>
   <body>
