@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>JavaScript & DOM : Les Objets Fondamentaux - Exercice 2</title>
     <script>
       //Énoncé :
@@ -13,15 +13,26 @@
 
         La liste des propriétés et méthodes disponibles pour les objets de type String est disponible ici : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String
       */
-      
+
       /*
       1. Obligez l'utilisateur à saisir une chaîne de caractères dans une boite de dialogue. Un fois la saisie validée. Affichez dans une boite de dialogue le nombre de caractères de la chaîne de caractères saisie (propriété .length). 
       */
-      
+      (function() {
+        let x = prompt("Saisissez une chaîne de caractères");
+        console.log(
+          "Le nombre de caractères de la chaîne de caractères saisie : " +
+            x.length
+        );
+        console.log(
+          "Tous les caractères de la chaîne saisie à l'exception du premier et du dernier : " +
+            x.substr(1, x.length - 2)
+        );
+        console.log("Les mots : " + x.split(" "));
+      })();
       /*
       2. Utilisez la méthode .substr() pour extraire et afficher dans une boite de dialogue tous les caractères de la chaîne saisie à l'exception du premier et du dernier.
       */
-      
+
       /*
       3. Utilisez la méthode .split() pour récupérer chacun des mot de la saisie utilisateur dans un tableau. Affichez séparément chaque mot dans une boîte de dialogue.
       */
