@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 5</title>
     <script>
       //Énoncé :
@@ -10,19 +10,27 @@
         
         L'objet window contient de propriété qui contiennent des informations relatives au document Web chargé en mémoire. Si on modifie ces informations en mémoire, l'affichage change en conséquence. Nous allons nous intéresser à la propriété document de l'objet window. Cette propriété contient un objet qui sert de point d'entrée au modèle objet du document affiché. Ce sous objet est documenté ici dans le MDN : https://developer.mozilla.org/fr/docs/Web/API/Document
       */
-      
+
       /*
       1. La méthode .getElementById() de l'objet document prend en argument une chaîne de caractère qui correspond à l'identifiant d'une balise du document Web. Elle retourne une référence vers l'objet correspondant en mémoire. 
       Identifiez une balise du document Web (utilisez l'attribut id). Une fois la balise identifiée, écrivez l'algorithme suivant : AU CHARGEMENT du document, récupérez une référence vers l'objet correspondant à la balise identifiée et affichez cette objet dans la console.
       */
-      
+      let f = () => {
+        console.log(document.getElementById("title"));
+      };
       /*
       2. Vous savez désormais récupérer une référence à l'objet correspondant à une balise identifiée. Identifiez une autre balise du document Web (toujours en utilisant l'attribut id). Une fois la balise identifiée, écrivez l'algorithme suivant : AU CLIC sur le titre principal, récupérez une référence vers l'objet correspondant à la balise identifiée. Cette objet dispose de propriété et de méthode. Affectez à la propriété innerHTML de l'objet correspondant à la balise le texte : 'Ce texte est écrit dans cette balise par mon script'.
       */
+      let f1 = () => {
+        let m = console.log(document.getElementById("section"));
+
+        document.getElementById("section").innerHTML =
+          "Ce texte est écrit dans cette balise par mon script";
+      };
     </script>
   </head>
-  <body>
-    <h1>Titre principal</h1>
+  <body onload="f()">
+    <h1 onclick="f1()" id="title">Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
@@ -34,7 +42,7 @@
       <p><span>1.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>
     <div>
-      <h2><span>2</span>. Titre de la deuxième section</h2>
+      <h2 id="section"><span>2</span>. Titre de la deuxième section</h2>
       <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
       <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>

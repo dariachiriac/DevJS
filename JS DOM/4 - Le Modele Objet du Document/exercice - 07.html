@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 7</title>
+    <style>
+      .rose {
+        background-color: rosybrown;
+        color: white;
+      }
+    </style>
     <script>
       //Énoncé :
       /*
@@ -10,10 +16,13 @@
         
         Certains attributs de balise ne sont pas chargés en mémoire avec leur nom en HTML. En effet, ils correspondent à des mots clés réservé du langage JavaScript. Par exemple, l'attribut class en HTML correspond à la propriété className dans le modèle objet du document.
       */
-      
+
       /*
         1. Créez une classe CSS qui spécifie plusieurs propriétés de style pour une <div> correspondant à une section. Ecrivez l'algorithme suivant : AU SURVOL sur une <div>, lui attribuer la classe CSS créée. QUANT ON NE SURVOLE PLUS la <div>, lui retirer la classe CSS créée.
       */
+      let f = () => {
+        document.getElementsById("div").className = "rose";
+      };
     </script>
   </head>
   <body>
@@ -23,17 +32,23 @@
       <li>Deuxième point</li>
       <li>Troisième point</li>
     </ul>
-    <div>
+    <div id="div" onmouseover="f()">
       <h2><span>1</span>. Titre de la première section</h2>
-      <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>
-      <p><span>1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
+      <p>
+        <span>1.1</span>. Premier paragraphe de la première section et un
+        <a href="#">lien</a>.
+      </p>
+      <p>
+        <span>1.2</span>. Deuxième paragraphe de la deuxième section et un
+        <a href="#">lien</a>.
+      </p>
     </div>
-    <div>
+    <div id="div" onmouseover="f()">
       <h2><span>2</span>. Titre de la deuxième section</h2>
       <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
       <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>
-    <div>
+    <div id="div" onmouseover="f()">
       <h2><span>3</span>. Titre de la troisième section</h2>
       <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
       <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
