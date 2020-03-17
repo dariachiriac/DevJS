@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 9</title>
+    <style>
+      .div {
+        display: none;
+      }
+    </style>
     <script>
       //Énoncé :
       /*
@@ -25,20 +30,44 @@
       <li>Deuxième point</li>
       <li>Troisième point</li>
     </ul>
-    <div>
+    <div class="div">
       <h2><span>1</span>. Titre de la première section</h2>
       <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>
       <p><span>1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
     </div>
-    <div>
+    <div class="div">
       <h2><span>2</span>. Titre de la deuxième section</h2>
       <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
       <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>
-    <div>
+    <div class="div">
       <h2><span>3</span>. Titre de la troisième section</h2>
       <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
       <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
     </div>
   </body>
+  <script>
+  let div = document.getElementsByClassName('div');
+  
+  let h1ToClick = document.querySelector('h1');
+  
+  let eventHandlerFunction = function () {
+  for (var i = 0; i < div.length; i++) {
+  div[i].style.display = "block";
+  }
+  };
+  let eventHandlerFunction1 = function () {
+  for (var i = 0; i < div.length; i++) {
+  div[i].style.display = "none";
+  }
+  }; 
+
+  h1ToClick.onmouseover = eventHandlerFunction;
+  h1ToClick.onmouseout = eventHandlerFunction1;
+
+  //Deuxième façon:
+  //h1ToClick.addEventListener ('mouseover', eventHandlerFunction);
+  //h1ToClick.addEventListener ('mouseout', eventHandlerFunction1);
+  
+  </script>
 </html>

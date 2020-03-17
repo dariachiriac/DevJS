@@ -14,31 +14,11 @@
       /*
         1. Écrivez l'algorithme suivant : AU CLIC sur le titre de la première section, renseignez les attributs href ainsi que les attributs title des 2 liens dans les deux paragraphes qui suivent.
       */
-      let liens;
-      let clickMe = () => {
-        let liens = document.getElementsByTagName("a");
-        let href[0] = liens[0].getAttribute("href");
-        alert(href);
-
-        /*for (var i = 0, c = liens.length; i < c; i++) {
-          console.log(liens[i].href);
-          console.log(liens[i].title);
-          console.log(
-            "Element n° " +
-              (i + 1) +
-              " : " +
-              liens[i].href +
-              " title" +
-              liens[i].title
-          );
-        }*/
-      };
+     
       /*
         2. Écrivez l'algorithme suivant : AU CLIC sur le titre de la deuxième section, mettez une fonction dans l'attribut onclick du deuxième paragraphe de la section.
       */
-      /*let clickMe2 = () => {
-        document.getElementsByTagName("p"). = onclick;
-      };*/
+      
     </script>
   </head>
   <body>
@@ -49,7 +29,7 @@
       <li>Troisième point</li>
     </ul>
     <div>
-      <h2 onclick="clickMe()"><span>1</span>. Titre de la première section</h2>
+      <h2><span>1</span>. Titre de la première section</h2>
       <p>
         <span>1.1</span>. Premier paragraphe de la première section et un
         <a href="">lien</a>.
@@ -60,7 +40,7 @@
       </p>
     </div>
     <div>
-      <h2 onclick="clickMe2()"><span>2</span>. Titre de la deuxième section</h2>
+      <h2><span>2</span>. Titre de la deuxième section</h2>
       <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
       <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
     </div>
@@ -69,5 +49,24 @@
       <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
       <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
     </div>
+    <script>
+      let liens;
+      document.querySelector('h2').onclick = function () {
+       liens = document.querySelectorAll('a');
+       console.log(liens);
+       let links = ["https://www.google.com/", "https://github.com"];
+       let titre = ["Google", "GitHub"];
+       for (var i=0; i<liens.length; i++) {
+         console.log("Lien " + i + ": " + liens[i].href + " " + liens[i].title);
+         liens[i].href = links[i];
+         liens[i].title = titre[i];
+         console.log("Lien " + i + ": " + liens[i].href + " " + liens[i].title);
+       }
+     };
+     let allHeadings = document.querySelectorAll('h2');
+     allHeadings[1].onclick = function () {
+       console.log("You did it!");
+     }
+    </script>
   </body>
 </html>

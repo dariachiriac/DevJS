@@ -42,5 +42,18 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
     </div>
+    <script>
+      let clickMe = document.querySelector('h1');
+      let div = document.querySelector('body > div');
+      div.style.display = 'none';
+      let eventHandler = function () {
+        if (div.style.display === "none") {
+          div.style.display = "block";
+        } else {
+          div.style.display = "none";
+        }
+      };
+      clickMe.addEventListener('click', eventHandler);
+    </script>
   </body>
 </html>

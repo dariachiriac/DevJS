@@ -18,10 +18,10 @@
       */
     </script>
   </head>
-  <body onload="window.alert('Ce message est affiché au chargement du document !')">
+  <body>
     <h1>Titre principal</h1>
     <ul>
-      <li onmouseover="window.alert('Ce message est affiché lorsqu\'on survole ce point.');">Premier point</li>
+      <li>Premier point</li>
       <li>Deuxième point</li>
       <li>Troisième point</li>
     </ul>
@@ -29,7 +29,7 @@
       <div>
         <h2><span>1</span>. Titre de la première section</h2>
         <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>
-        <p><span onmouseout="window.alert('Ce message est affiché lorsqu\'on ne survole plus cet élément.')">1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
+        <p><span id="span"> 1.2</span>. Deuxième paragraphe de la deuxième section et un <a href="#">lien</a>.</p>
       </div>
       <div>
         <h2><span>2</span>. Titre de la deuxième section</h2>
@@ -42,8 +42,14 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
       <form method="http://www.google.com" action="GET">
-        <input name="q" type="text" value="" onfocus="window.alert('Vous avez séléctionné le champ de saisie!');" />
+        <input name="q" type="text" value=""/>
       </form>
     </div>
+    <script>
+      window.onload = function () {alert('Ce message est affiché au chargement du document !')};
+      document.querySelector('li').onmouseover = function () {alert('Ce message est affiché lorsqu\'on survole ce point.')};
+      document.querySelector('#span').onmouseout = function () {alert('Ce message est affiché lorsqu\'on ne survole plus cet élément.')};
+      document.querySelector("[type]").onfocus = function () {alert('Vous avez séléctionné le champ de saisie!')};
+    </script>
   </body>
 </html>

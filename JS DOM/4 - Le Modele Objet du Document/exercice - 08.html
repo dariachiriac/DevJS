@@ -3,6 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <title>JavaScript & DOM : Le Modèle Objet du Document - Exercice 8</title>
+    <style>
+     .initial {
+       color: yellow;
+       font-size: 40px;
+       font-style: italic;
+       font-weight: 900}
+    </style>
+
     <script>
       //Énoncé :
       /*
@@ -45,4 +53,45 @@
       </div>
     </div>
   </body>
+  <script>
+    let liElement = document.getElementsByTagName('li');
+    
+    let spanElement = document.getElementsByTagName('span');
+
+    let titre = document.getElementsByTagName('h1');
+   
+    let eventHandlerFunction1 = function () {
+      spanElement[0].style.color = "tomato";
+      spanElement[0].style.fontSize = "30px";
+      spanElement[0].style.fontStyle = "italic";
+      spanElement[0].style.fontWeight = "900";};
+
+      let eventHandlerFunction2 = function () {
+      spanElement[3].style.color = "green";
+      spanElement[3].style.fontSize = "30px";
+      spanElement[3].style.fontStyle = "italic";
+      spanElement[3].style.fontWeight = "900";};
+
+      let eventHandlerFunction3 = function () {
+      spanElement[6].style.color = "red";
+      spanElement[6].style.fontSize = "30px";
+      spanElement[6].style.fontStyle = "italic";
+      spanElement[6].style.fontWeight = "900";};
+
+      liElement[0].addEventListener ('click', eventHandlerFunction1);
+      liElement[1].addEventListener ('click', eventHandlerFunction2);
+      liElement[2].addEventListener ('click', eventHandlerFunction3);
+
+      let eventHandlerFunction4 = function () {
+        for (var i=0; i<spanElement.length; i+3)
+        {
+          spanElement[i].className = "initial";
+        };
+      }
+      
+      titre.onclick = eventHandlerFunction4();
+      
+
+      
+  </script>
 </html>

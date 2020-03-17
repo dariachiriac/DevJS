@@ -21,15 +21,7 @@
         1. Créez une classe CSS qui spécifie plusieurs propriétés de style pour une <div> correspondant à une section. Ecrivez l'algorithme suivant : AU SURVOL sur une <div>, lui attribuer la classe CSS créée. QUANT ON NE SURVOLE PLUS la <div>, lui retirer la classe CSS créée.
       */
 
-      let element = document.querySelector("div");
-      /*element.className = "rose";
-      console.log(element, element.className);
-      element.onmouseover = function() {
-        element.classList.toggle("rose");
-      };
-      element.onmouseout = function() {
-        element.classList.toggle("rose");
-      };*/
+      
     </script>
   </head>
   <body>
@@ -60,5 +52,17 @@
       <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
       <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
     </div>
+    <script>
+    let element = document.querySelector("div");
+      //element.className = "";
+      console.log(element, element.className);
+      element.onmouseover = function() {
+        element.classList.toggle("rose");
+      };
+      element.onmouseout = function() {
+        element.classList.toggle("rose");
+      };
+
+      </script>
   </body>
 </html>

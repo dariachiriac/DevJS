@@ -40,5 +40,16 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
     </div>
+    <script>
+      let titre = document.querySelector('h1');
+      let eventHandlerFunction = () => {
+      let computedStyles = getComputedStyle(titre);
+      let marginLeft = parseInt(computedStyles.marginLeft);
+      console.log(marginLeft);
+      titre.style.marginLeft = marginLeft + 2 + "px";
+      console.log(titre.style.marginLeft);
+      };
+      titre.addEventListener('click', eventHandlerFunction);
+    </script>
   </body>
 </html>

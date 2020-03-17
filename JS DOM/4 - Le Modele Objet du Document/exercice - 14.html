@@ -38,5 +38,20 @@
         <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
       </div>
     </div>
+    <script>
+      let titre = document.querySelector('h1');
+      titre.style.position = "absolute";
+
+      setInterval(() => { 
+      titre.style.position = "absolute";
+      let computedStyles = getComputedStyle(titre);
+      let top = parseInt(computedStyles.top);
+      let left = parseInt(computedStyles.left);
+      console.log(top );
+      titre.style.top = top + 5 + "px";
+      titre.style.left = left + 5 + "px";
+      console.log(titre.style.top, titre.style.left);
+      }, 200);
+    </script> 
   </body>
 </html>
